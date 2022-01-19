@@ -9,7 +9,12 @@ public class SpawnBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject ball = Instantiate(ballPrefab);
+        ResetBallPosition();
+    }
+
+    public void ResetBallPosition()
+    {
+        GameObject ball = Instantiate<GameObject>(ballPrefab);
         ball.transform.position = new Vector3(transform.position.x,transform.position.y + ballPrefab.transform.localScale.y ,transform.position.z);
     }
     
